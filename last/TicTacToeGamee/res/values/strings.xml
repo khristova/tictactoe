@@ -15,5 +15,6 @@
     <string name="back_to_menu">Обратно в меню</string>
     <string name="btn_logout_from_google">Logout from Google</string>
     <string name="btn_revoke_access">Revoke Access</string>
+    <string name="title_activity_test">TestActivity</string>
 
 </resources>
