@@ -162,18 +162,17 @@ public class SinglePlayerActivity extends Activity {
 				});
 		builder1.setCancelable(false);
 		if (field.checkWin() == 0 && moveCount == 8) {
-			builder1.setMessage("Tie");
-			builder1.setTitle("Result");
+			builder1.setMessage("Равен");
+			builder1.setTitle("Резултат");
 			builder1.show();
-			
 		} else if (field.checkWin() == 1) {
-			builder1.setMessage("X wins");
-			builder1.setTitle("Result");
+			builder1.setMessage("X печели");
+			builder1.setTitle("Резултат");
 			builder1.show();
 			setFinishOnTouchOutside(false);
 		} else if (field.checkWin() == 2) {
-			builder1.setMessage("O wins");
-			builder1.setTitle("Result");
+			builder1.setMessage("O печели");
+			builder1.setTitle("Резултат");
 			builder1.show();
 		}
 	}

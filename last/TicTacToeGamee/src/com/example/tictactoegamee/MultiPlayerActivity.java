@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -178,31 +179,24 @@ public class MultiPlayerActivity extends Activity {
 								socket.getInputStream())); 
 
 						Log.w("client recieved: ", input.readLine());
-						System.out.println("probaaaaaa");
-						
-						button = (ImageButton) findViewById(R.id.button01);
-						button.setBackgroundResource(R.drawable.o);
 						input.close();
 
-					} catch (IOException e) {
-						// Bail out
-					}
 
 					out.flush();
 					out.close();
-					
 
+					
 				} catch (UnknownHostException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				} catch (IOException e) {
+				} } catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+			
 
 			}
 		}).start();
-
 		button.setEnabled(false);
 
 		moveCount++;
@@ -230,18 +224,17 @@ public class MultiPlayerActivity extends Activity {
 				});
 		builder1.setCancelable(false);
 		if (field.checkWin() == 0 && moveCount == 8) {
-			builder1.setMessage("Tie");
-			builder1.setTitle("Result");
+			builder1.setMessage("Равен");
+			builder1.setTitle("Резултат");
 			builder1.show();
-
 		} else if (field.checkWin() == 1) {
-			builder1.setMessage("X wins");
-			builder1.setTitle("Result");
+			builder1.setMessage("X печели");
+			builder1.setTitle("Резултат");
 			builder1.show();
 			setFinishOnTouchOutside(false);
 		} else if (field.checkWin() == 2) {
-			builder1.setMessage("O wins");
-			builder1.setTitle("Result");
+			builder1.setMessage("O печели");
+			builder1.setTitle("Резултат");
 			builder1.show();
 		}
 	}

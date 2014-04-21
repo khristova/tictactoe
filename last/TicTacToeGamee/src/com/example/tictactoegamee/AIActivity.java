@@ -16,7 +16,6 @@ public class AIActivity extends Activity {
 	int aiSign = 2; // AI is with sign "O"
 	boolean AIturn = false;
 	int moves = 0;
-	// boolean isCurrPlayerO = false;
 	ImageButton button;
 	int thirdEmptyCell;
 	int moveCount = 0;
@@ -77,14 +76,6 @@ public class AIActivity extends Activity {
 		AIturn = !AIturn;
 		moves++;
 	}
-
-	// TO DO
-	// 1. Ako imame 2 poredni aiSign i ako tretoto e svobodno, slagame 3-to
-	// 2. Ako oponenta ima 2 poredni i tretoto e svobodno go zapushvame
-	// 3. Ako ima svobodno do nashe(na bota), i tretoto e svobodno, slagame tam.
-	// Ako
-	// ima poveche ot edno podhodqshto, izbirame na random
-	// 4. Random
 
 	private void putPicOnCord(int cords) {
 		int y = cords % 10;
@@ -246,7 +237,6 @@ public class AIActivity extends Activity {
 		}
 		button.setEnabled(false);
 		moveCount++;
-		// isCurrPlayerO = !isCurrPlayerO;
 	}
 
 	private int checkTwoInLine(int sign) {
@@ -409,17 +399,17 @@ public class AIActivity extends Activity {
 		builder1.setCancelable(false);
 
 		if (field.checkWin() == 0 && moveCount == 8) {
-			builder1.setMessage("Tie");
-			builder1.setTitle("Result");
+			builder1.setMessage("Равен");
+			builder1.setTitle("Резултат");
 			builder1.show();
 		} else if (field.checkWin() == 1) {
-			builder1.setMessage("X wins");
-			builder1.setTitle("Result");
+			builder1.setMessage("X печели");
+			builder1.setTitle("Резултат");
 			builder1.show();
 			setFinishOnTouchOutside(false);
 		} else if (field.checkWin() == 2) {
-			builder1.setMessage("O wins");
-			builder1.setTitle("Result");
+			builder1.setMessage("O печели");
+			builder1.setTitle("Резултат");
 			builder1.show();
 		}
 	}
